@@ -1,0 +1,191 @@
+// Primary colors
+$red: hsl(0, 100%, 67%);
+$orange: hsl(39, 100%, 56%);
+$green: hsl(166, 100%, 37%);
+$blue: hsl(234, 85%, 45%);
+
+// Summary buttons
+$reaction:#FFF6F6;
+$memory: #FFFBF2;
+$verbal: #F3FAFA;
+$visual: #F3F3FD;
+
+// Gradients
+$slateBlue: hsl(252, 100%, 67%);
+$royalBlue: hsl(241, 81%, 54%);
+$violetBlue: hsla(256, 72%, 46%, 1);
+$persianBlue: hsl(241, 72%, 46%);
+
+// Neutral
+$white: hsl(0, 0%, 100%);
+$paleBlue: hsl(221, 100%, 96%);
+$lightLavender: hsl(241, 100%, 89%);
+$grayBlue: hsl(224, 30%, 27%);
+
+// Font setup
+@font-face {
+    font-family: Hanken;
+    src: url(../assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    place-items: center;
+    grid-template-columns: 1fr;
+    font-size: 18px;
+    font-family: Hanken;
+    
+}
+
+.box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 325px;
+    width: 450px;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px rgba(128,128,128,.8);
+}
+
+.scorecard {
+    grid-column: 1;
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    align-items: center;
+    place-items: center;
+    border-radius: 10px;
+    padding: 20px;
+    background: linear-gradient(180deg, $slateBlue 0%, $royalBlue 100%);
+
+    &__header {
+        font-size: .8rem;
+        color: $lightLavender;
+        font-weight: 500;
+        opacity: .8;
+    }
+
+    &__bubble {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        background: linear-gradient(180deg, $persianBlue 0%, $violetBlue 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__score{
+        color: $white;
+        font-weight: 700;
+        font-size: 2rem;
+    }
+    &__para{
+        color: $lightLavender;
+        opacity: .3;
+        font-size: .7rem;
+    }
+
+    &__assessment {
+        color: $white;
+        font-weight: 500;
+        font-size: 1.2rem;
+    }
+
+    &__review {
+        color: $lightLavender;
+        text-align: center;
+        font-size: .7rem;
+        opacity: .6;
+        padding: 10px;
+    }
+}
+
+.summary {
+    grid-column: 2;
+    border-radius: 10px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    row-gap: 10px;
+
+    &__header {
+        font-weight: 700;
+        align-self: center;
+    }
+
+    &__reaction, &__memory, &__verbal, &__visual {
+        
+        border-radius: 10px;
+        padding: 8px;
+        font-size: .8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__right {
+        justify-self: flex-end;
+        margin-left: 30px;
+    }
+
+    &__left {
+        justify-self: flex-start;
+        margin-right: 5px;
+    }
+
+    &__light {
+        color: $grayBlue;
+        opacity: .6;
+    }
+
+    &__reaction {
+        background-color: $reaction;
+    }
+
+    &__memory {
+        background-color: $memory;
+    }
+
+    &__verbal{
+        background-color: $verbal;
+    }
+
+    &__visual {
+        background-color: $visual;
+    }
+
+    &__button{
+        border-radius: 40px;
+        height: 35px;
+        align-self: center;
+        color: $white;
+        background-color: $grayBlue;
+        border: none;
+        font-size: .7rem;
+    }
+}
+
+.red {
+    color: $red;
+}
+
+.orange {
+    color: $orange;
+}
+
+.green {
+    color: $green;
+}
+
+.blue {
+    color: $blue;
+}
